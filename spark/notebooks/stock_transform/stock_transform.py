@@ -36,7 +36,7 @@ if __name__ == '__main__':
         # Read a JSON file from an MinIO bucket using the access key, secret key, 
         # and endpoint configured above
         df = spark.read.option("header", "false") \
-            .json(f"s3a://{os.getenv('SPARK_APPLICATION_ARGS')}/prices.json")
+            .json(f"s3a://{os.getenv('SPARK_APPLICATION_ARGS')}")
 
         # Explode the necessary arrays
         df_exploded = df.select("timestamp", explode("indicators.quote").alias("quote")) \

@@ -14,6 +14,41 @@ http://localhost:8080/home
 user: admin
 password: admin
 
+### connections
+connection id: stocks_yahoo
+connection type: http
+host: https://query1.finance.yahoo.com/
+
+extra: {
+"endpoint":"/v8/finance/chart/",  
+"headers":{
+  "Content-Type":"application/json",
+  "User-Agent":"Mozilla/5.0"}
+}
+
+
+### minio
+
+connection_id: minio
+connection_type: AWS Web Services
+AWS Access Key ID: minio
+AWS Secret Access Key: minio123
+
+extra: {"endpoint_url":"http://host.docker.internal:9000"}
+
+localhost:9000
+
+MINIO_ROOT_USER: minio
+MINIO_ROOT_PASSWORD: minio123
+
+![alt text](imagens/minio.png)
+
+### Spark
+cd spark/notebooks/stock_transform/
+docker build . -t airflow/stock-app
+
+
+
 docker build spark/master -t airflow-spark-master
 docker build spark/worker -t airflow-spark-worker
 
