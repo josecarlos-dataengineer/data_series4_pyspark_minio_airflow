@@ -1,13 +1,13 @@
+# Airflow - Python - Spark - Minio
+## Instruções para execução
 
+Após instalar o astro sdk, acesse a pasta em que o projeto foi clonado e siga os seguintes passos no terminal:
 
+* astro dev init <br>
 
-Após instalar o astro sdk
+* astro dev start <br>
 
-acesse a pasta em que o projeto foi clonado
-
-astro dev init 
-
-astro dev start
+Assim que o script terminar a execução você poderá checar a interface do Airflow e fazer login.
 
 http://localhost:8080/home
 
