@@ -17,7 +17,7 @@ password: admin
 ### connections
 Para a coleta dos dados, a aplicação necessita de algumas conexões configuradas no Airflow UI. Acesse Admin -> Connections, e insira as três conexões mencionadas abaixo:
 
-**stocks_yahoo**
+**stocks_yahoo** <br>
 connection id: stocks_yahoo
 connection type: http
 host: https://query1.finance.yahoo.com/
@@ -28,7 +28,7 @@ extra: {
   "Content-Type":"application/json",
   "User-Agent":"Mozilla/5.0"}
 }  <br>
-**postgres**
+**postgres** <br>
 connection id: postgres
 connection type: postgres
 host: postgres
@@ -37,23 +37,18 @@ login: postgres
 password: postgres
 port: 5432 <br>
 
-### minio
+**minio** <br>
 connection_id: minio
 connection_type: AWS Web Services
 AWS Access Key ID: minio
 AWS Secret Access Key: minio123
-
 extra: {"endpoint_url":"http://host.docker.internal:9000"} <br>
-
-
 
 ### Spark
 cd spark/notebooks/stock_transform/
 docker build . -t airflow/stock-app
 
-
 ### Airflow UI
-
 Após ligar a DAG e executar, espera-se que todas as tasks tenham sucesso. É possível checar acessando o comando DAGS
 
 ![alt text](imagens/dags.png)
