@@ -21,13 +21,13 @@ Para a coleta dos dados, a aplicação necessita de algumas conexões configurad
 connection id: stocks_yahoo
 connection type: http
 host: https://query1.finance.yahoo.com/
-
 extra: {
 "endpoint":"/v8/finance/chart/",  
 "headers":{
   "Content-Type":"application/json",
   "User-Agent":"Mozilla/5.0"}
 }  <br>
+
 **postgres** <br>
 connection id: postgres
 connection type: postgres
