@@ -74,6 +74,9 @@ Caso o Spark apresente erro no build inicial, acesse a pasta master e depois wor
 * docker build spark/master -t airflow-spark-master
 * docker build spark/worker -t airflow-spark-worker
 
+E então execute: <br>
+astro dev restart
+
 Caso queira executar tasks via CLI:
 
 astro dev bash
