@@ -25,7 +25,14 @@ extra: {
   "Content-Type":"application/json",
   "User-Agent":"Mozilla/5.0"}
 }
-
+**postgres**
+connection id: postgres
+connection type: postgres
+host: postgres
+database: postgres_db
+login: postgres
+password: postgres
+port: 5432
 
 ### minio
 
