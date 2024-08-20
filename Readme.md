@@ -43,6 +43,23 @@ AWS Secret Access Key: minio123
 
 extra: {"endpoint_url":"http://host.docker.internal:9000"}
 
+
+
+### Spark
+cd spark/notebooks/stock_transform/
+docker build . -t airflow/stock-app
+
+
+### Airflow UI
+
+Após ligar a DAG e executar, espera-se que todas as tasks tenham sucesso. É possível checar acessando o comando DAGS
+
+![alt text](imagens/dags.png)
+
+execuções:
+![alt text](imagens/execucoes.png)
+
+### Minio UI
 localhost:9000
 
 MINIO_ROOT_USER: minio
@@ -50,11 +67,8 @@ MINIO_ROOT_PASSWORD: minio123
 
 ![alt text](imagens/minio.png)
 
-### Spark
-cd spark/notebooks/stock_transform/
-docker build . -t airflow/stock-app
 
-
+### Debug
 
 docker build spark/master -t airflow-spark-master
 docker build spark/worker -t airflow-spark-worker
