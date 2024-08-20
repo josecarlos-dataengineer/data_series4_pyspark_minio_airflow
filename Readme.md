@@ -45,8 +45,12 @@ AWS Secret Access Key: minio123
 extra: {"endpoint_url":"http://host.docker.internal:9000"} <br>
 
 ### Spark
-cd spark/notebooks/stock_transform/
-docker build . -t airflow/stock-app
+* cd spark/notebooks/stock_transform/
+* docker build . -t airflow/stock-app
+* cd ..
+* cd ..
+* cd ..
+* astro dev restart
 
 ### Airflow UI
 Após ligar a DAG e executar, espera-se que todas as tasks tenham sucesso. É possível checar acessando o comando DAGS
@@ -66,13 +70,14 @@ MINIO_ROOT_PASSWORD: minio123
 
 
 ### Debug
+Caso o Spark apresente erro no build inicial, acesse a pasta master e depois worker, executando no terminal respectivamente cada build abaixo: <br>
+* docker build spark/master -t airflow-spark-master
+* docker build spark/worker -t airflow-spark-worker
 
-docker build spark/master -t airflow-spark-master
-docker build spark/worker -t airflow-spark-worker
+Caso queira executar tasks via CLI:
 
 astro dev bash
 
 airflow tasks test stock_market is_api_available 20240720
 airflow tasks test stock_market get_stock_prices 20240720
 
-docker build spark/notebooks/stock_transform -t airflow/stock-app
