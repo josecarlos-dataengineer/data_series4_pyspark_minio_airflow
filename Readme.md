@@ -1,4 +1,9 @@
 # Airflow - Python - Spark - Minio
+
+## Descrição
+O pipeline aqui desenvolvido coleta dados da API !["Yahoo Finance"](https://query1.finance.yahoo.com/v8/finance/chart/). <br>
+
+![alt text](imagens/resumo.png)
 ## Instruções para execução
 
 Após instalar o astro sdk, acesse a pasta em que o projeto foi clonado e siga os seguintes passos no terminal:
